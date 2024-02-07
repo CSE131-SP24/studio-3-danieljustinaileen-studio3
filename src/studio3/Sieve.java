@@ -22,11 +22,11 @@ public class Sieve {
 			if (listOfNumbers[index] == 0) {
 				index++;
 			} else {
-				for (int i = 0; i < listOfNumbers.length; i++) {
+				for (int i = listOfNumbers[index]; i < listOfNumbers.length; i++) {
 					if (listOfNumbers[i] == 0) {
 						
 					} else {
-						if (listOfNumbers[i] / listOfNumbers[index] == 0) {
+						if (listOfNumbers[i] % listOfNumbers[index] == 0) {
 							listOfNumbers[i] = 0;
 
 						}
