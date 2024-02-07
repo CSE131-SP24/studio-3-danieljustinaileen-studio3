@@ -17,21 +17,16 @@ public class Sieve {
 		listOfNumbers[0] = 0;
 
 		int index = 0;
-
+		int multiplier = 2;
 		while (index < Math.sqrt(n)) {
 			if (listOfNumbers[index] == 0) {
 				index++;
 			} else {
-				for (int i = listOfNumbers[index]; i < listOfNumbers.length; i++) {
-					if (listOfNumbers[i] == 0) {
-						
-					} else {
-						if (listOfNumbers[i] % listOfNumbers[index] == 0) {
-							listOfNumbers[i] = 0;
-
-						}
-					}
+				while(multiplier*listOfNumbers[index]<=n) {
+					listOfNumbers[multiplier*listOfNumbers[index]-1]=0;
+					multiplier++;
 				}
+			multiplier = 2;
 			index++;
 			}
 		}
